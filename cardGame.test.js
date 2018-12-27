@@ -47,6 +47,9 @@ test('getNumberOfPlayers returns value of "2"', () => {
     expect(functions.getNumberOfPlayers(playerChoice)).toBe('2');
 })
 
+
+//unfortunately for these, i was unable to figure out how to test a function that does not return a value.
+
 // test('computerPlayer remains undefined', () => {
 //     var playerOne;
 //     var playerTwo;

@@ -26,7 +26,7 @@ function cardGame(){
 
 const functions = {
 
-    getDeck(){
+getDeck(){
 	var deck = [];
 
 	for(var i = 0; i < suits.length; i++)
@@ -39,70 +39,9 @@ const functions = {
 	}
 
 	return deck;
-    },
+},
 
-    createPlayers(numberOfPlayers) {
-
-        if(numberOfPlayers === "1"){
-            playerOne = {Hand: []};
-            computerPlayer = {Hand: []};
-        }
-        else{
-            playerOne = {Hand: []};
-            playerTwo = {Hand: []};
-        }
-    },
-
-    shuffleDeck(deck) {
-        var currentIndex = deck.length; 
-        var temporaryValue;
-        var randomIndex;
-     
-        while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            temporaryValue = deck[currentIndex];
-            deck[currentIndex] = deck[randomIndex];
-            deck[randomIndex] = temporaryValue;
-        };
-     
-        return deck;
-    },
-
-    getNumberOfPlayers(playerChoice){
-          
-        switch(playerChoice){
-        case "1":
-            return playerChoice;
-    
-        case "2":
-            return playerChoice;
-    
-        default:
-            alert("please enter a '1' or '2'")
-            getNumberOfPlayers();
-        }
-    }
-}
-module.exports = functions;
-
-function getDeck()
-{
-	var deck = [];
-
-	for(var i = 0; i < suits.length; i++)
-	{
-		for(var j = 0; j < values.length; j++)
-		{
-			var card = {Value: values[j], Suit: suits[i]};
-			deck.push(card);
-		}
-	}
-
-	return deck;
-}
-
-function shuffleDeck(deck) {
+shuffleDeck(deck) {
     var currentIndex = deck.length; 
     var temporaryValue;
     var randomIndex;
@@ -116,11 +55,11 @@ function shuffleDeck(deck) {
     };
  
     return deck;
-}
+},
 
-function getNumberOfPlayers(){
-    var playerChoice = prompt("please enter '1' or '2' for number of players");
-      
+//prompt removed for testing purposes
+getNumberOfPlayers(playerChoice){
+    //var playerChoice = prompt("choose '1' or '2' players")  
     switch(playerChoice){
     case "1":
         return playerChoice;
@@ -132,9 +71,9 @@ function getNumberOfPlayers(){
         alert("please enter a '1' or '2'")
         getNumberOfPlayers();
     }
-}
+},
 
-function createPlayers(numberOfPlayers) {
+createPlayers(numberOfPlayers) {
 
     if(numberOfPlayers === "1"){
         playerOne = {Hand: []};
@@ -144,9 +83,9 @@ function createPlayers(numberOfPlayers) {
         playerOne = {Hand: []};
         playerTwo = {Hand: []};
     }
-}
+},
 
-function dealCards(shuffledDeck){
+dealCards(shuffledDeck){
     var i = 0;
 
     if(computerPlayer == undefined){
@@ -164,3 +103,5 @@ function dealCards(shuffledDeck){
         }
     }
 }
+}
+module.exports = functions;
